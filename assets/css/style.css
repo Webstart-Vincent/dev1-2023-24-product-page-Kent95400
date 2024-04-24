@@ -26,6 +26,7 @@ main {
   --purple-color: #7e1a5e;
   --border: 1px solid var(--black-color);
   --transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  --product-filter-postitions: 1/5/2/6;
 }
 body {
   display: grid;
@@ -101,7 +102,7 @@ main {
 .product::after {
   content: '';
   background-color: var(--green-color);
-  grid-area: 1 / 5 / 2 / 6;
+  grid-area: var(--product-filter-postitions);
   opacity: 0.2;
 }
 .product__main {
