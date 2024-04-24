@@ -27,6 +27,7 @@ main {
   --border: 1px solid var(--black-color);
   --transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   --product-filter-postitions: 1/5/2/6;
+  --product-filter-color: var(--green-color);
 }
 body {
   display: grid;
@@ -70,10 +71,36 @@ nav {
   margin: 0 0 0 var(--negative-spacing);
   border-right: var(--border);
 }
-.nike-logo {
+
+.cart {
+  width: 56px;
+  background-color: transparent;
+  margin-bottom: auto;
+  position: relative;
+}
+
+.cart > span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--red-color);
+  border-radius: 8px;
+  display: none;
+  align-items: center;
+}
+
+.cart > span.show {
+  display: grid;
+}
+
+/* .nike-logo {
   width: 68px;
   margin-bottom: auto;
-}
+} */
 .social {
   width: 24px;
 }
@@ -101,7 +128,7 @@ main {
 }
 .product::after {
   content: '';
-  background-color: var(--green-color);
+  background-color: var(--product-filter-color);
   grid-area: var(--product-filter-postitions);
   opacity: 0.2;
 }
