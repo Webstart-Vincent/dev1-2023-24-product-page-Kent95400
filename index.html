@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <script src="./assets/js/select-view.js" defer></script>
+    <script src="./assets/js/cart.js" defer></script>
   </head>
   <body>
     <nav>
@@ -75,9 +76,26 @@
           <button class="btn-red" aria-label="Choose red color"></button>
           <button class="btn-purple" aria-label="Choose purple color"></button>
         </div>
-        <button type="submit">Buy Now</button>
+        <button type="submit">Add to Cart</button>
       </div>
     </main>
     <!-- <div class="grid">12 cols</div> -->
+    <dialog>
+      <!-- Affichage d'une modale (une fenêtre qui interrompt la navigation pour que l'utulisateur interagisse avec l'application) ça seras la page du panier lorsqu'on cliquera dessus-->
+      <h2>Mise à jour de votre panier</h2>
+      <form method="dialog">
+        <label for="cartLengthInput">Nombre d'articles :</label>
+        <input
+          type="number"
+          min="0"
+          name="cartLengthInput"
+          id="cartLengthInput"
+        />
+        <menu class="dialog-menu">
+          <button type="submit">Valider</button>
+          <button value="cancel">Annuler</button>
+        </menu>
+      </form>
+    </dialog>
   </body>
 </html>

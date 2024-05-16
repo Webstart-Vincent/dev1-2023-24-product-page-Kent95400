@@ -40,6 +40,7 @@ body {
   color: var(--black-color);
 }
 h1,
+h2,
 button {
   font-weight: 700;
 }
@@ -48,7 +49,15 @@ h1 {
   line-height: 108%;
   margin-bottom: 20px;
 }
-button[type='submit'] {
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+button[type='submit'],
+dialog .dialog-menu button {
   font-size: 22px;
   background-color: var(--black-color);
   border-radius: 10px;
@@ -56,7 +65,13 @@ button[type='submit'] {
   padding: 12px;
   width: 212px;
   margin-top: auto;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+button[type='submit']:hover {
+  background-color: #222;
+}
+
 button {
   cursor: pointer;
 }
@@ -205,6 +220,49 @@ main {
   display: flex;
   gap: 6px;
   margin-top: 4px;
+}
+
+dialog {
+  /* Centré un élément qui est en position fixed */
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--spacing);
+  border-radius: 20px;
+  border: var(--border);
+}
+::backdrop {
+  backdrop-filter: blur(6px);
+  background-color: #3334;
+}
+
+dialog .dialog-menu button {
+  font-size: 16px;
+  padding: 8px 12px;
+  width: auto;
+  margin: 10px;
+}
+
+.dialog-menu {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.dialog-menu button[value='cancel'] {
+  background-color: var(--red-color);
+}
+
+dialog input {
+  border: var(--border);
+  border-radius: 6px;
+  margin-left: 6px;
+  text-align: right;
+  width: 60px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin-left: 6px;
 }
 
 @media (max-width: 850px) {

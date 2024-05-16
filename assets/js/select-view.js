@@ -64,4 +64,3 @@ swatchesButtons.forEach((button, index) => {
     setUI(button, index)
   })
 })
-// Quand on clique sur un de ces boutons, on prend son index pour l'affecter à la variable colorIndex
